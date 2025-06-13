@@ -27,9 +27,6 @@ export type Root = {
     darkElement: SceneElem//DarkElement
 }
 
-// export type RootPartial = Partial<Root>
-
-
 export enum GAME_NAMES {
     RED_CAR = 'RED_CAR',
     YELLOW_CAR = 'YELLOW_CAR',
