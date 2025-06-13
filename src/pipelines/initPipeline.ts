@@ -34,14 +34,14 @@ export const initPipeline = async () => {
 
     const letterYellowText = new Letter('P', COLOR_LETTER_P_YELLOW)
     const letterYellow = new SceneElem(GAME_NAMES.LETTER_YELLOW, letterYellowText)
-    const collisionYL = new Graphics().rect(-70, -1000, 140, 1140).fill(0x00ff00)
+    const collisionYL = new Graphics().rect(-70, -1000, 140, 1050).fill(0x00ff00)
     collisionYL.alpha = .0005
     letterYellow.setCollisionElem(collisionYL)
     app.stage.addChild(letterYellow)
 
     const letterRedText = new Letter('P', COLOR_LETTER_P_RED)
     const letterRed = new SceneElem(GAME_NAMES.LETTER_RED, letterRedText)
-    const collisionRL = new Graphics().rect(-70, -1000, 140, 1140).fill(0x00ff00)
+    const collisionRL = new Graphics().rect(-70, -1000, 140, 1050).fill(0x00ff00)
     collisionRL.alpha = .0005
     letterRed.setCollisionElem(collisionRL)
     app.stage.addChild(letterRed)
@@ -129,7 +129,7 @@ export const initPipeline = async () => {
     userLineYellow.init(root)
     
     resizer.setRoot(root)
-    document.getElementById("pixi-container")!.appendChild(app.canvas);
+    document.getElementById("pixi-container")!.appendChild(app.canvas)
     resizer.resize()
 
     letterYellow.show()
