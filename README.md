@@ -12,6 +12,6 @@
 
 ```bash
 git clone https://github.com/fire888/251305_roasup.git
-cd 251305_ruasup
+cd 251305_roasup
 npm i
 npm run dev
