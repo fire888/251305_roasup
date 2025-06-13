@@ -1,6 +1,6 @@
 # PixiJS + Tweenjs + TypeScript + Vite
 
-![NY](https://github.com/fire888/251305_roasup.git/blob/master/src/assets/preview.png)
+![NY](https://raw.githubusercontent.com/fire888/251305_roasup/refs/heads/master/src/assets/promo/preview.png)
 
 ## [Ссылка на демо-страницу](https://fire888.github.io/251306_ruasup/)
 
