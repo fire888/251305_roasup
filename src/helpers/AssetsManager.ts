@@ -1,14 +1,3 @@
-// import { 
-//     //ASSET_HAND_SRC,
-//     //ASSET_LOGO_SRC,
-//     ASSET_BTN_START_SRC,
-//     ASSET_FAIL_SRC,
-//     ASSET_CAR_BLUE_SRC,
-//     ASSET_CAR_GREEN_SRC,
-//     ASSET_CAR_RED_SRC,
-//     ASSET_CAR_WHITE_SRC,
-//     ASSET_CAR_YELLOW_SRC,
-// } from "../constants/constants";
 import { Assets, Texture } from "pixi.js";
 
 export const ASSET_HAND_SRC = new URL('../assets/hand.png', import.meta.url).href;
@@ -31,9 +20,6 @@ export class AssetsManager {
     carRed: Texture | null = null
     carWhite: Texture | null = null
     carYellow: Texture | null = null
-    constructor () {
-
-    }
 
     async loadAssets () {
         this.hand = await Assets.load(ASSET_HAND_SRC)        

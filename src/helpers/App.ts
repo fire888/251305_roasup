@@ -10,7 +10,7 @@ export class App extends Application {
         const options = {
             resizeTo: window,
             backgroundColor: BACKGROUND_COLOR,
-            resolution: 1//window.devicePixelRatio
+            resolution: 1,
         }
         super.init(options);
     }
