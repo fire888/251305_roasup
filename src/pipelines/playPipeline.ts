@@ -320,7 +320,7 @@ export const playPipeline = async (root: Root) => {
         }
     }
 
-    // sckip if user do not select car long time
+    // skip if user do not select car long time
     if (redCarPoints && yellowCarPoints) {
         await moveCarsAlongPaths(root, redCarPoints, yellowCarPoints)
     }

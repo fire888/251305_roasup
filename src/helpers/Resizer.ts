@@ -47,16 +47,25 @@ export class Resizer {
             mainSceneContainer.scale.set(scale)
         }
 
-        userLineRed!.resize(window.innerWidth, window.innerHeight, scale)
-        userLineYellow!.resize(window.innerWidth, window.innerHeight, scale)
+        if (userLineRed) {
+            userLineRed.resize(window.innerWidth, window.innerHeight, scale)
+        }
 
-        carRed.x = centerX - scale * 200 
-        carRed.y = window.innerHeight - scale * 120
-        carRed.scale.set(scale * .6)
+        if (userLineYellow) {
+            userLineYellow.resize(window.innerWidth, window.innerHeight, scale)
+        }
 
-        carYellow.x = centerX + scale * 200 
-        carYellow.y = window.innerHeight - scale * 120
-        carYellow.scale.set(scale * .6)
+        if (carRed) {
+            carRed.x = centerX - scale * 200 
+            carRed.y = window.innerHeight - scale * 120
+            carRed.scale.set(scale * .6)
+        }
+
+        if (carYellow) {
+            carYellow.x = centerX + scale * 200 
+            carYellow.y = window.innerHeight - scale * 120
+            carYellow.scale.set(scale * .6)
+        }
 
         if (carBlue) {
             carBlue.x = centerX - scale * 300 
