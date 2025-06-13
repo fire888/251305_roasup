@@ -10,8 +10,6 @@ import { MainSceneContainer } from "../entities/MainSceneContainer";
 import { 
     COLOR_LETTER_P_YELLOW, 
     COLOR_LETTER_P_RED, 
-    RED_P_COORD, 
-    YELLOW_P_COORD,
 } from "../constants/constants";
 import { pause } from "../helpers/helpers";
 import { Graphics, Sprite } from "pixi.js";
@@ -36,17 +34,15 @@ export const initPipeline = async () => {
 
     const letterYellowText = new Letter('P', COLOR_LETTER_P_YELLOW)
     const letterYellow = new SceneElem(GAME_NAMES.LETTER_YELLOW, letterYellowText)
-    letterYellow.position = YELLOW_P_COORD.clone()
     const collisionYL = new Graphics().rect(-70, -1000, 140, 1140).fill(0x00ff00)
-    collisionYL.alpha = .00005
+    collisionYL.alpha = .0005
     letterYellow.setCollisionElem(collisionYL)
     app.stage.addChild(letterYellow)
 
     const letterRedText = new Letter('P', COLOR_LETTER_P_RED)
     const letterRed = new SceneElem(GAME_NAMES.LETTER_RED, letterRedText)
-    letterRed.position = RED_P_COORD.clone()
     const collisionRL = new Graphics().rect(-70, -1000, 140, 1140).fill(0x00ff00)
-    collisionRL.alpha = .00005
+    collisionRL.alpha = .0005
     letterRed.setCollisionElem(collisionRL)
     app.stage.addChild(letterRed)
 
@@ -66,7 +62,7 @@ export const initPipeline = async () => {
     carBlue.rotation = Math.PI
     carBlue.setTexture(assetsManager.carBlue!)
     const collisionBlue = new Graphics().rect(-70, -150, 140, 1000).fill(0x00ff00)
-    collisionBlue.alpha = .00005
+    collisionBlue.alpha = .0005
     carBlue.setCollisionElem(collisionBlue)
     app.stage.addChild(carBlue)
 
@@ -80,7 +76,7 @@ export const initPipeline = async () => {
     const carYellow = new SceneElem(GAME_NAMES.CAR_YELLOW, new Sprite())
     carYellow.setTexture(assetsManager.carYellow!)
     const collisionYellow = new Graphics().rect(-70, -150, 140, 1000).fill(0xffff00)
-    collisionYellow.alpha = .00005
+    collisionYellow.alpha = .0005
     carYellow.setCollisionElem(collisionYellow)
     app.stage.addChild(carYellow)
     
@@ -89,8 +85,7 @@ export const initPipeline = async () => {
     hand.setAnchor(.7, .7)
     app.stage.addChild(hand)
 
-    const sp2 = new Sprite()
-    const messFail = new SceneElem(GAME_NAMES.MESS_FAIL, sp2)
+    const messFail = new SceneElem(GAME_NAMES.MESS_FAIL, new Sprite())
     messFail.setTexture(assetsManager.messFail!)
     app.stage.addChild(messFail)
 
@@ -100,14 +95,12 @@ export const initPipeline = async () => {
     const darkElement = new SceneElem(GAME_NAMES.DARK_ELEMENT, darkPixel)
     app.stage.addChild(darkElement)
 
-    const sp3 = new Sprite()
-    const logo = new SceneElem(GAME_NAMES.LOGO, sp3)
+    const logo = new SceneElem(GAME_NAMES.LOGO, new Sprite())
     logo.scale.set(0.3)
     logo.setTexture(assetsManager.logo!)
     app.stage.addChild(logo)
 
-    const sp4 = new Sprite()
-    const btnStart = new SceneElem(GAME_NAMES.BTN_START, sp4)
+    const btnStart = new SceneElem(GAME_NAMES.BTN_START, new Sprite())
     btnStart.setTexture(assetsManager.btnStart!)
     app.stage.addChild(btnStart)
 
