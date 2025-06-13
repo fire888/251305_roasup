@@ -1,14 +1,14 @@
 import { Assets, Texture } from "pixi.js";
 
-export const ASSET_HAND_SRC = new URL('../assets/hand.png', import.meta.url).href;
-export const ASSET_LOGO_SRC = new URL('../assets/gamelogo.png', import.meta.url).href;
-export const ASSET_BTN_START_SRC = new URL('../assets/Button.png', import.meta.url).href;
-export const ASSET_FAIL_SRC = new URL('../assets/fail3.png', import.meta.url).href;
-export const ASSET_CAR_RED_SRC = new URL('../assets/carRed.png', import.meta.url).href;
-export const ASSET_CAR_GREEN_SRC = new URL('../assets/carGreen.png', import.meta.url).href;
-export const ASSET_CAR_BLUE_SRC = new URL('../assets/carBlue.png', import.meta.url).href;
-export const ASSET_CAR_YELLOW_SRC = new URL('../assets/carYellow.png', import.meta.url).href;
-export const ASSET_CAR_WHITE_SRC = new URL('../assets/carWhite.png', import.meta.url).href;
+const ASSET_HAND_SRC = new URL('../assets/hand.png', import.meta.url).href;
+const ASSET_LOGO_SRC = new URL('../assets/gamelogo.png', import.meta.url).href;
+const ASSET_BTN_START_SRC = new URL('../assets/Button.png', import.meta.url).href;
+const ASSET_FAIL_SRC = new URL('../assets/fail3.png', import.meta.url).href;
+const ASSET_CAR_RED_SRC = new URL('../assets/carRed.png', import.meta.url).href;
+const ASSET_CAR_GREEN_SRC = new URL('../assets/carGreen.png', import.meta.url).href;
+const ASSET_CAR_BLUE_SRC = new URL('../assets/carBlue.png', import.meta.url).href;
+const ASSET_CAR_YELLOW_SRC = new URL('../assets/carYellow.png', import.meta.url).href;
+const ASSET_CAR_WHITE_SRC = new URL('../assets/carWhite.png', import.meta.url).href;
 
 export class AssetsManager {
     hand: Texture | null = null
