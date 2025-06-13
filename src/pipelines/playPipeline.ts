@@ -208,7 +208,7 @@ const moveCarsAlongPaths = (root: Root, redCarPoints: Point[], yellowCarPoints: 
                 updateCar(carRed, redCarPointsSampled, tweenObject.phase)
                 updateCar(carYellow, yellowCarPointsSampled, tweenObject.phase)
                 const d = Math.sqrt(Math.pow(carRed.x - carYellow.x, 2) + Math.pow(carRed.y - carYellow.y, 2))
-                if (d < 100 * resizer.scale) {
+                if (d < 160 * resizer.scale) {
                     isUpdateNextFrame = false
                     tween?.stop()
                     tween = null
