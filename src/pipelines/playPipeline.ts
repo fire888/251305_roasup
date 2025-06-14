@@ -29,6 +29,7 @@ const waitClickCar = async (
         letterRed,
         hand,
         carYellow, 
+        resizer,
     } = root
 
     // ANIMATION HAND ======================== //
@@ -42,22 +43,22 @@ const waitClickCar = async (
         
         let tween: TWEEN.Tween | null = null
 
-        const moveHand = (dir: number) => {
-            const objStart = { x: carRed.x + 70, y: carRed.y + 70 }
+        const moveHand = () => {
+            const objStart = { phase: 0 }
             tween = new TWEEN.Tween(objStart)
-                .to({ x: letterRed.x + 70, y: letterRed.y + 70 }, 1000)
+                .to({ phase: 1 }, 1000)
                 .easing(TWEEN.Easing.Linear.None)
                 .onComplete(() => {
                     tween = null
-                    moveHand(-dir)     
+                    moveHand()     
                 })
                 .onUpdate(() => {
-                    hand.x = objStart.x
-                    hand.y = objStart.y
+                    hand.x = carRed.x + resizer.scale * 70 + objStart.phase * (letterRed.x - carRed.x) 
+                    hand.y = carRed.y + resizer.scale * 70 + objStart.phase * (letterRed.y - carRed.y)
                 })
                 .start()
         }
-        moveHand(100)
+        moveHand()
 
         const animate = (time: number) => {
             if (!isUpdateNextFrame) {

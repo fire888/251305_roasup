@@ -6,7 +6,6 @@ import { Letter } from "../entities/Letter";
 import { RoadWhiteLinesManager } from "../entities/RoadWhiteLinesManager";
 import { Resizer } from "../helpers/Resizer";
 import { DrawUserLine } from "../entities/DrawUserLine";
-import { MainSceneContainer } from "../entities/MainSceneContainer";
 import { 
     COLOR_LETTER_P_YELLOW, 
     COLOR_LETTER_P_RED, 
@@ -23,9 +22,6 @@ export const initPipeline = async () => {
 
     const userLineYellow = new DrawUserLine(GAME_NAMES.USER_LINE_YELLOW)
     app.stage.addChild(userLineYellow)
-
-    const mainSceneContainer = new MainSceneContainer()
-    app.stage.addChild(mainSceneContainer)
 
     const assetsManager = new AssetsManager()
     await assetsManager.loadAssets()
@@ -48,7 +44,7 @@ export const initPipeline = async () => {
 
     const roadWhiteLineManager = new RoadWhiteLinesManager()
     roadWhiteLineManager.position.set(0, -150)
-    mainSceneContainer.addChild(roadWhiteLineManager)
+    app.stage.addChild(roadWhiteLineManager)
 
     const carGreen = new SceneElem(GAME_NAMES.CAR_GREEN, new Sprite())
     carGreen.rotation = Math.PI
@@ -121,7 +117,6 @@ export const initPipeline = async () => {
         roadWhiteLinesManager: roadWhiteLineManager,
         userLineRed: userLineRed,
         userLineYellow: userLineYellow,
-        mainSceneContainer: mainSceneContainer,
         darkElement: darkElement
     }
 

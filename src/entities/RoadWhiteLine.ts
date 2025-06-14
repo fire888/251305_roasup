@@ -3,7 +3,7 @@ import { Graphics } from "pixi.js"
 const H = -2000 
 const W = 20
 const hW = W * .5
-const W2 = 40
+const W2 = 30
 
 export class RoadWhiteLine extends Graphics {
     constructor() {

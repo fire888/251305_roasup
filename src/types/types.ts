@@ -4,11 +4,9 @@ import { SceneElem } from "../entities/SceneElem.ts";
 import { RoadWhiteLinesManager } from "../entities/RoadWhiteLinesManager.ts";
 import { Resizer } from "../helpers/Resizer.ts";
 import { DrawUserLine } from "../entities/DrawUserLine.ts";
-import { MainSceneContainer } from "../entities/MainSceneContainer.ts";
 
 export type Root = {
     app: App
-    mainSceneContainer: MainSceneContainer
     assetsManager: AssetsManager
     resizer: Resizer
     hand: SceneElem
@@ -24,7 +22,7 @@ export type Root = {
     roadWhiteLinesManager: RoadWhiteLinesManager
     userLineRed: DrawUserLine
     userLineYellow: DrawUserLine
-    darkElement: SceneElem//DarkElement
+    darkElement: SceneElem
 }
 
 export enum GAME_NAMES {
