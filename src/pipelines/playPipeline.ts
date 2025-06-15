@@ -79,10 +79,28 @@ const waitClickCar = async (
         return new Promise((res) => {
             resolve = res
             timerAutoResolve = setTimeout(() => {
+                // IF USER GO FROM CURRENT TAB DROP RESOLVE
+                if (document.hidden === true) { 
+                    return
+                }
+                // IF USER NOT CLICK ON CAR RESOLVE NO CAR
                 if (resolve !== null) {
                     resolve(GAME_NAMES.NONE)
                 }
             }, TIME_WAIT_START_USER_CLICK)
+
+            // IF USER GO FROM CURRENT TAB AND RETURN RESOLVE NO CAR
+            window.addEventListener('visibilitychange', () => { 
+                if (document.hidden === true) { 
+                    return
+                }
+                if (timerAutoResolve) { 
+                    clearTimeout(timerAutoResolve)
+                }
+                if (resolve !== null) { 
+                    resolve(GAME_NAMES.NONE)
+                }
+            })
         }) 
     }
     const onClick = (elementName: GAME_NAMES) => {
