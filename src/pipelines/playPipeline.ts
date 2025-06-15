@@ -2,7 +2,7 @@ import { Root, GAME_NAMES } from "../types/types"
 import { SceneElem } from "../entities/SceneElem"
 import { DrawUserLine } from "../entities/DrawUserLine"
 import * as TWEEN from '@tweenjs/tween.js'
-import { Point } from "pixi.js"
+import { Graphics, Point } from "pixi.js"
 import { pause, resamplePolyline } from "../helpers/helpers"
 import { 
     REDIRECT_URL,
@@ -10,7 +10,7 @@ import {
 } from "../constants/constants"
 
 type TdataForDrawStroke = {
-    completeCollision: SceneElem,
+    completeCollision: Graphics,
     failCollisions: SceneElem[],
     userLine: DrawUserLine,
     startDrawPoint: Point,
@@ -138,7 +138,7 @@ const drawStroke = (dataForDrawStroke: TdataForDrawStroke): Promise<Point[] | nu
             userLine.completeDraw()
 
             for (let i = 0; i < failCollisions.length; ++i) {
-                failCollisions[i].eventMode = 'none'
+                failCollisions[i].eventMode = 'passive'
                 failCollisions[i].off('pointerover', dropDraw)
             }
             completeCollision.eventMode = 'none'
@@ -151,7 +151,7 @@ const drawStroke = (dataForDrawStroke: TdataForDrawStroke): Promise<Point[] | nu
             const userPoints = userLine.completeDraw()
             
             for (let i = 0; i < failCollisions.length; ++i) {
-                failCollisions[i].eventMode = 'none'
+                failCollisions[i].eventMode = 'passive'
                 failCollisions[i].off('pointerover', dropDraw)
             }
             completeCollision.eventMode = 'none'
@@ -274,13 +274,13 @@ export const playPipeline = async (root: Root) => {
     } = root
 
     const dataForDrawStrokeRed: TdataForDrawStroke = {
-        completeCollision: letterRed,
+        completeCollision: letterRed.collisionElem2!,
         failCollisions: [letterYellow, carBlue, carGreen, carYellow],
         userLine: userLineRed,
         startDrawPoint: new Point(carRed.x, carRed.y),
     }
     const dataForDrawStrokeYellow: TdataForDrawStroke = {
-        completeCollision: letterYellow,
+        completeCollision: letterYellow.collisionElem2!,
         failCollisions: [letterRed, carBlue, carGreen, carRed],
         userLine: userLineYellow,
         startDrawPoint: new Point(carYellow.x, carYellow.y),

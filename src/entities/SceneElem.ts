@@ -6,6 +6,7 @@ export class SceneElem extends Container {
     public gameName: GAME_NAMES
     public elem: Sprite | Graphics | Text
     public collisionElem: Graphics | null = null
+    public collisionElem2: Graphics | null = null
     private tween: TWEEN.Tween | null = null
     private isUpdateNextFrame = true
     private waitModeTimer: ReturnType<typeof setTimeout> | null = null
@@ -31,6 +32,11 @@ export class SceneElem extends Container {
     setCollisionElem(elem: Graphics) {
         this.collisionElem = elem
         this.addChild(this.collisionElem)
+    }
+
+    setCollisionElem2(elem: Graphics) {
+        this.collisionElem2 = elem
+        this.addChild(this.collisionElem2)
     }
 
     setAnchor(v1: number, v2: number) {

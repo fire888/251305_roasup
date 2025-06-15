@@ -33,13 +33,19 @@ export const initPipeline = async () => {
     const collisionYL = new Graphics().rect(-70, -1000, 140, 1050).fill(0x00ff00)
     collisionYL.alpha = .0005
     letterYellow.setCollisionElem(collisionYL)
+    const collisionYL2 = new Graphics().rect(-50, -30, 100, 60).fill(0x005500)
+    collisionYL2.alpha = .0005
+    letterYellow.setCollisionElem2(collisionYL2)
     app.stage.addChild(letterYellow)
 
     const letterRedText = new Letter('P', COLOR_LETTER_P_RED)
     const letterRed = new SceneElem(GAME_NAMES.LETTER_RED, letterRedText)
-    const collisionRL = new Graphics().rect(-70, -1000, 140, 1050).fill(0x00ff00)
+    const collisionRL = new Graphics().rect(-70, -1000, 140, 1050).fill(0x0000ff)
     collisionRL.alpha = .0005
     letterRed.setCollisionElem(collisionRL)
+    const collisionRL2 = new Graphics().rect(-50, -30, 100, 60).fill(0x0000ff)
+    collisionRL2.alpha = .0005
+    letterRed.setCollisionElem2(collisionRL2)
     app.stage.addChild(letterRed)
 
     const roadWhiteLineManager = new RoadWhiteLinesManager()
@@ -50,7 +56,7 @@ export const initPipeline = async () => {
     carGreen.rotation = Math.PI
     carGreen.setTexture(assetsManager.carGreen!)
     const collisionGreen = new Graphics().rect(-70, -150, 140, 1000).fill(0x00ff00)
-    collisionGreen.alpha = .00005
+    collisionGreen.alpha = .0005
     carGreen.setCollisionElem(collisionGreen)
     app.stage.addChild(carGreen)
 
