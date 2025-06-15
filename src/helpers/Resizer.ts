@@ -52,11 +52,11 @@ export class Resizer {
 
         messFail.x = centerX
         messFail.y = centerY
-        messFail.scale.set(scale * .4)
+        messFail.scale.set(scale * 1.8)
 
         darkElement.scale.set(window.innerWidth, window.innerHeight)
 
-        hand.scale.set(scale * .5)
+        hand.scale.set(scale * .8)
 
         let mode = SCREEN_MODE.GORIZONTAL
         const ratio = window.innerWidth / window.innerHeight 
@@ -98,11 +98,11 @@ export class Resizer {
 
             logo.x = centerX
             logo.y = centerY - scale * 180
-            logo.scale.set(scale * .3)
+            logo.scale.set(scale * 1.8)
 
             btnStart.x = centerX
             btnStart.y = centerY + scale * 280
-            btnStart.scale.set(scale * 1.)
+            btnStart.scale.set(scale * 1.5)
         }
         if (mode === SCREEN_MODE.VERTICAL) {
             roadWhiteLinesManager.x = centerX
@@ -135,11 +135,11 @@ export class Resizer {
 
             logo.x = centerX
             logo.y = centerY - scale * 350
-            logo.scale.set(scale * .25)
+            logo.scale.set(scale * 1.7)
 
             btnStart.x = centerX
             btnStart.y = centerY + scale * 300
-            btnStart.scale.set(scale * .9)
+            btnStart.scale.set(scale * 1.35)
         }
         if (mode === SCREEN_MODE.SQUARE) {
             roadWhiteLinesManager.x = centerX
@@ -172,11 +172,11 @@ export class Resizer {
 
             logo.x = centerX
             logo.y = centerY - scale * 180
-            logo.scale.set(scale * .25)
+            logo.scale.set(scale * 1.7)
 
             btnStart.x = centerX
             btnStart.y = centerY + scale * 300
-            btnStart.scale.set(scale * .9)
+            btnStart.scale.set(scale * 1.35)
         }
     }
 }
