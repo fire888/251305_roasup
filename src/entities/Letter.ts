@@ -7,7 +7,7 @@ export class Letter extends Text {
             fill: color,
         }
 
-        // @ts-ignore
+        // @ts-expect-error: fontWeight mistake
         super({ 
             text: letter, 
             style,
