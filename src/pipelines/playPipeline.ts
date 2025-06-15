@@ -1,7 +1,7 @@
 import { Root, GAME_NAMES } from "../types/types"
 import { SceneElem } from "../entities/SceneElem"
 import { DrawUserLine } from "../entities/DrawUserLine"
-import * as TWEEN from '@tweenjs/tween.js'
+import { Tween, Easing } from '@tweenjs/tween.js'
 import { Graphics, Point } from "pixi.js"
 import { pause, resamplePolyline } from "../helpers/helpers"
 import { 
@@ -41,13 +41,13 @@ const waitClickCar = async (
         await pause(200)
         hand.startWaitMode()
         
-        let tween: TWEEN.Tween | null = null
+        let tween: Tween | null = null
 
         const moveHand = () => {
             const objStart = { phase: 0 }
-            tween = new TWEEN.Tween(objStart)
+            tween = new Tween(objStart)
                 .to({ phase: 1 }, 1000)
-                .easing(TWEEN.Easing.Linear.None)
+                .easing(Easing.Linear.None)
                 .onComplete(() => {
                     tween = null
                     moveHand()     
@@ -220,9 +220,9 @@ const moveCarsAlongPaths = (root: Root, redCarPoints: Point[], yellowCarPoints: 
         const TIME = 5000
         let isUpdateNextFrame = true
         const tweenObject = { phase: 0 }
-        let tween: TWEEN.Tween | null = new TWEEN.Tween(tweenObject)
+        let tween: Tween | null = new Tween(tweenObject)
             .to({ phase: 1 }, TIME)
-            .easing(TWEEN.Easing.Linear.None)
+            .easing(Easing.Linear.None)
             .onUpdate(() => {
                 updateCar(carRed, redCarPointsSampled, tweenObject.phase)
                 updateCar(carYellow, yellowCarPointsSampled, tweenObject.phase)

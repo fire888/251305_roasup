@@ -1,5 +1,5 @@
 import { Container, Sprite, Texture, Graphics, Text } from "pixi.js"
-import * as TWEEN from '@tweenjs/tween.js'
+import { Tween, Easing } from '@tweenjs/tween.js'
 import { GAME_NAMES } from "../types/types"
 
 export class SceneElem extends Container {
@@ -7,7 +7,7 @@ export class SceneElem extends Container {
     public elem: Sprite | Graphics | Text
     public collisionElem: Graphics | null = null
     public collisionElem2: Graphics | null = null
-    private tween: TWEEN.Tween | null = null
+    private tween: Tween | null = null
     private isUpdateNextFrame = true
     private waitModeTimer: ReturnType<typeof setTimeout> | null = null
     
@@ -65,9 +65,9 @@ export class SceneElem extends Container {
         
         const object = { scale: 0 }
 
-        this.tween = new TWEEN.Tween(object)
+        this.tween = new Tween(object)
             .to({ scale: 1 }, duration)
-            .easing(TWEEN.Easing.Sinusoidal.InOut)
+            .easing(Easing.Sinusoidal.InOut)
             .onComplete(() => {
                 this.isUpdateNextFrame = false
             })
@@ -102,9 +102,9 @@ export class SceneElem extends Container {
         
         const object = { phase: 0 }
 
-        this.tween = new TWEEN.Tween(object)
+        this.tween = new Tween(object)
             .to({ phase: 1 }, duration)
-            .easing(TWEEN.Easing.Sinusoidal.InOut)
+            .easing(Easing.Sinusoidal.InOut)
             .onComplete(() => {
                 this.isUpdateNextFrame = false
             })
@@ -135,9 +135,9 @@ export class SceneElem extends Container {
         this.isUpdateNextFrame = true
 
         const object = { phase: 0 }
-        this.tween = new TWEEN.Tween(object)
+        this.tween = new Tween(object)
             .to({ phase: 1 }, duration)
-            .easing(TWEEN.Easing.Quartic.In)
+            .easing(Easing.Quartic.In)
             .onComplete(() => {
                 this.tween = null
             })
@@ -170,9 +170,9 @@ export class SceneElem extends Container {
             this.isUpdateNextFrame = true
 
             const object = { phase: 0 }
-            this.tween = new TWEEN.Tween(object)
+            this.tween = new Tween(object)
                 .to({ phase: Math.PI * 6 }, 600)
-                .easing(TWEEN.Easing.Quartic.In)
+                .easing(Easing.Quartic.In)
                 .onComplete(() => {
                     this.tween = null
                     this.isUpdateNextFrame = false
@@ -217,9 +217,9 @@ export class SceneElem extends Container {
             this.isUpdateNextFrame = true
 
             const object = { phase: 0 }
-            this.tween = new TWEEN.Tween(object)
+            this.tween = new Tween(object)
                 .to({ phase: Math.PI * 6 }, 6000)
-                .easing(TWEEN.Easing.Linear.None)
+                .easing(Easing.Linear.None)
                 .onComplete(() => {
                     this.tween = null
                     this.isUpdateNextFrame = false
